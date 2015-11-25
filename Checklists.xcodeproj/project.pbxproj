@@ -12,6 +12,7 @@
 		BA5547201C052C75006B29BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA55471E1C052C75006B29BC /* Main.storyboard */; };
 		BA5547221C052C75006B29BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA5547211C052C75006B29BC /* Assets.xcassets */; };
 		BA5547251C052C75006B29BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA5547231C052C75006B29BC /* LaunchScreen.storyboard */; };
+		BA922D881C06218400BDF214 /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA922D871C06218400BDF214 /* ChecklistItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BA5547211C052C75006B29BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA5547241C052C75006B29BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA5547261C052C75006B29BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA922D871C06218400BDF214 /* ChecklistItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				BA5547211C052C75006B29BC /* Assets.xcassets */,
 				BA5547231C052C75006B29BC /* LaunchScreen.storyboard */,
 				BA5547261C052C75006B29BC /* Info.plist */,
+				BA922D871C06218400BDF214 /* ChecklistItem.swift */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA55471D1C052C75006B29BC /* ChecklistViewController.swift in Sources */,
+				BA922D881C06218400BDF214 /* ChecklistItem.swift in Sources */,
 				BA55471B1C052C75006B29BC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +288,7 @@
 				BA55472B1C052C75006B29BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
