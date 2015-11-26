@@ -9,12 +9,23 @@
 import UIKit
 
 class AllListsViewController: UITableViewController,
-                                        ListDetailViewControllerDelegate {
+            ListDetailViewControllerDelegate, UINavigationControllerDelegate {
     
     var dataModel: DataModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        navigationController?.delegate = self
+        let index = dataModel.indexOfSelectedChecklist
+        if index >= 0 && index < dataModel.lists.count {
+            let checklist = dataModel.lists[index]
+            performSegueWithIdentifier("ShowChecklist", sender: checklist)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +49,7 @@ class AllListsViewController: UITableViewController,
     
     override func tableView(tableView: UITableView,
                             didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        dataModel.indexOfSelectedChecklist = indexPath.row
         let checklist = dataModel.lists[indexPath.row]
         performSegueWithIdentifier("ShowChecklist", sender: checklist)
     }
@@ -120,5 +132,13 @@ class AllListsViewController: UITableViewController,
             }
         }
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func navigationController(navigationController: UINavigationController,
+                    willShowViewController viewController: UIViewController,
+                    animated: Bool) {
+        if viewController === self {
+            dataModel.indexOfSelectedChecklist = -1
+        }
     }
 }
