@@ -55,6 +55,7 @@ class DataModel {
                 lists = unarchiver.decodeObjectForKey("Checklists")
                     as! [Checklist]
                 unarchiver.finishDecoding()
+                sortChecklists()
             }
         }
     }
@@ -74,6 +75,12 @@ class DataModel {
     func registerDefaults() {
         let dictionary = [ "ChecklistIndex": -1, "FirstTime": true ]
         NSUserDefaults.standardUserDefaults().registerDefaults(dictionary)
+    }
+    
+    func sortChecklists() {
+        lists.sortInPlace({ checklist1, checklist2 in return
+            checklist1.name.localizedStandardCompare(checklist2.name) ==
+                                                            .OrderedAscending })
     }
 
 }
