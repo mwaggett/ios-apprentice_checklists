@@ -199,9 +199,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pmj-Gy-JDh">
-                                                    <rect key="frame" x="523" y="4" width="36" height="36"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pmj-Gy-JDh">
+                                                    <rect key="frame" x="531" y="4" width="36" height="36"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="36" id="2yT-Q5-n3D"/>
+                                                        <constraint firstAttribute="width" constant="36" id="LsV-UL-GQd"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ity-2y-Z8e">
                                                     <rect key="frame" x="8" y="11" width="33" height="21"/>
@@ -212,10 +216,14 @@
                                                 </label>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="Pmj-Gy-JDh" firstAttribute="top" secondItem="QFg-fK-750" secondAttribute="top" constant="4" id="6lw-NW-mOT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Pmj-Gy-JDh" secondAttribute="trailing" id="rdb-k6-M1m"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="53F-lO-BOd" kind="show" identifier="PickIcon" id="whC-MV-twM"/>
+                                            <segue destination="53F-lO-BOd" kind="show" identifier="PickIcon" id="iko-hb-7ya"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -250,7 +258,7 @@
             </objects>
             <point key="canvasLocation" x="157" y="1134"/>
         </scene>
-        <!--Icon Picker View Controller-->
+        <!--Choose Icon-->
         <scene sceneID="AyD-cZ-Ieq">
             <objects>
                 <tableViewController id="53F-lO-BOd" customClass="IconPickerViewController" customModule="Checklists" customModuleProvider="target" sceneMemberID="viewController">
@@ -286,6 +294,7 @@
                             <outlet property="delegate" destination="53F-lO-BOd" id="eZC-f9-l42"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Choose Icon" id="yQL-51-UCO"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyW-lA-8Ci" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
