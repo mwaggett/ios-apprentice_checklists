@@ -16,6 +16,7 @@ class ChecklistViewController: UITableViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         title = checklist.name
+        checklist.sortChecklistItems()
     }
 
     override func didReceiveMemoryWarning() {
@@ -104,26 +105,17 @@ class ChecklistViewController: UITableViewController,
     }
     
     func itemDetailViewController(controller: ItemDetailViewController,
-                                    didFinishAddingItem item: ChecklistItem) {
-        let newRowIndex = checklist.items.count
-        
+                                    didFinishAddingItem item: ChecklistItem) {        
         checklist.items.append(item)
-        
-        let indexPath = NSIndexPath(forRow: newRowIndex, inSection: 0)
-        let indexPaths = [indexPath]
-        tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
-        
+        checklist.sortChecklistItems()
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
     func itemDetailViewController(controller: ItemDetailViewController,
                                     didFinishEditingItem item: ChecklistItem) {
-        if let index = checklist.items.indexOf(item) {
-            let indexPath = NSIndexPath(forRow: index, inSection: 0)
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
-                configureTextForCell(cell, withChecklistItem: item)
-            }
-        }
+        checklist.sortChecklistItems()
+        tableView.reloadData()
         dismissViewControllerAnimated(true, completion: nil)
     }
 }
