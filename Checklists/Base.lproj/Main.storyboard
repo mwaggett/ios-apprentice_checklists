@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--(Name of the Checklist)-->
@@ -22,8 +23,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="533" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsM-75-Wep">
-                                            <rect key="frame" x="29" y="14" width="490" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="1000" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nsM-75-Wep">
+                                            <rect key="frame" x="38" y="11" width="495" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -38,6 +39,11 @@
                                         </label>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="nsM-75-Wep" firstAttribute="centerY" secondItem="jEh-Ai-aJN" secondAttribute="centerY" id="1RG-zF-Gj3"/>
+                                        <constraint firstAttribute="trailing" secondItem="nsM-75-Wep" secondAttribute="trailing" id="FBq-jB-aX4"/>
+                                        <constraint firstItem="nsM-75-Wep" firstAttribute="leading" secondItem="jEh-Ai-aJN" secondAttribute="leadingMargin" constant="30" id="R6C-XA-ILj"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
@@ -81,9 +87,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mqD-CF-eag">
-                                                    <rect key="frame" x="8" y="0.0" width="584" height="43"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the Item" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mqD-CF-eag">
+                                                    <rect key="frame" x="8" y="8" width="584" height="43"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="43" id="YBx-Y9-V2g"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -93,6 +102,11 @@
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="mqD-CF-eag" firstAttribute="top" secondItem="FiN-lp-JhL" secondAttribute="top" constant="8" id="8R5-j7-A38"/>
+                                                <constraint firstItem="mqD-CF-eag" firstAttribute="leading" secondItem="FiN-lp-JhL" secondAttribute="leading" constant="8" id="rsf-w8-eic"/>
+                                                <constraint firstAttribute="trailing" secondItem="mqD-CF-eag" secondAttribute="trailing" constant="8" id="u86-mZ-yi6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -173,9 +187,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zBS-NF-j6M">
-                                                    <rect key="frame" x="8" y="8" width="584" height="27"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name of the List" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zBS-NF-j6M">
+                                                    <rect key="frame" x="8" y="8" width="584" height="30"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="VWu-55-vrb"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
@@ -185,6 +202,11 @@
                                                 </textField>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstItem="zBS-NF-j6M" firstAttribute="leading" secondItem="nMc-JW-3ts" secondAttribute="leading" constant="8" id="9TE-bb-iwX"/>
+                                                <constraint firstAttribute="trailing" secondItem="zBS-NF-j6M" secondAttribute="trailing" constant="8" id="RJc-T0-bb5"/>
+                                                <constraint firstItem="zBS-NF-j6M" firstAttribute="top" secondItem="nMc-JW-3ts" secondAttribute="top" constant="8" id="hZx-9f-AKG"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
